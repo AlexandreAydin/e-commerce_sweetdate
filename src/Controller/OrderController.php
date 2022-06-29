@@ -133,9 +133,10 @@ class OrderController extends AbstractController
             return $this->render('order/add.html.twig', [
 
                 'cartComplete' => $cartComplete,
-                 'carrier' => $carriers,
-                 'delivery' => $delivery_content,
-                 'reference' => $order->getReference()
+                'carrier' => $carriers,
+                'delivery' => $delivery_content,
+                'apikeypublic'=> $_ENV['SP_APIKEY_PUBLIC'],
+                'reference' => $order->getReference()
               
             ]);
             return $this->redirectToRoute('app_cart');
