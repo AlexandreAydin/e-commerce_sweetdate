@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ma commande  - sweetdate{% endblock %}
+
+
+{% block content %}
+<style>
+@media only screen and (max-width:500px){
+    .cart-mobile{
+        padding-left: 0%; 
+        margin-top: 14px; 
+        margin-bottom: 5px; 
+    }
+}
+</style>
+    <h1 class="cart-th">Ma commande</h1>
+     <h2>{{ order.reference }}</h2>
+    <a href="{{ path('app_account_order') }}">Retour</a>
+    <hr><strong></strong>
+    <strong class="azert">Statut de la commande : </strong>
+    {% if order.state == 1 %}
+        Paiement accepté
+    {% elseif order.state == 2 %}
+        Préparation en cours
+    {% elseif order.state == 3 %}
+        Livraison en cours
+    {% elseif order.state == 4 %}
+        Livré
+    {% endif %}
+    <br/>
+    <strong> Commande passée le  :</strong> {{ order.createdAt|date('d/m/Y') }}<br/>
+    <strong> Référence de ma commande  :</strong> <small>{{ order.reference }}</small><br/>
+    <strong> Transporteur choisi :</strong> {{ order.carriername }}
+    <hr>
+    <strong>Détails:</strong>
+
+    <table class="table mt-4">
+        <thead>
+        <tr>
+            <th> Produit </th>
+            <th> Quantité </th>
+            <th> Prix unitaire </th>
+            <th> Total </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in order.orderDetails %}
+        <tr>
+            <td>{{ product.product }}</td>
+            <td>{{ (product.quantity * 0.50) | number_format (2, ",",".") }} kg</td>
+            <td>{{ (product.price / 100)|number_format(2, ',', '.') }} €</td>
+            <td class="product-price-mobile">{{ (product.total / 100)|number_format(2, ',', '.') }}€</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-right">
+        <strong> Sous-total  :</strong> {{ (order.getTotal / 100)|number_format(2, ',', '.') }} €<br/>
+        <strong> Livraison  :</strong> {{ (order.carrierprice / 100)|number_format(2, ',', '.') }} €<br/>
+        <strong> Total  : </strong> {{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2, ',', '.') }} €
+    </div>
+{% endblock %}

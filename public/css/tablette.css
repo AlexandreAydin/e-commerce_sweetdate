@@ -1,0 +1,50 @@
+/*base.html.twig*/
+
+/*Home*/
+.baklava{
+    width: 230;
+    height: 161;
+    top: 20px;
+    left:10px;
+    position: absolute;
+    z-index:3;
+}
+
+ .baklava2{
+    width: 292;
+    height: 223;
+    position: absolute;
+    top: 260px;
+    left:0px;
+    z-index:1;
+}
+
+.baklava3{
+    width: 230;
+    height: 161;
+    position: absolute;
+    left:100px;
+    top:150px;
+    z-index:2;
+}  
+
+/*product/index.html.twig*/
+
+.tablet-margin{
+    margin-right:  90px;
+
+}
+/*Cart/index.html.twig*/
+
+.tablet-img-size{
+    height: 133;
+    width:198px;
+}
+
+.img-position{    
+    margin-left: 0;
+    padding-right: 100%;
+    /* width: 100vh; */
+    background-position: center;
+    border-radius: 0; 
+}

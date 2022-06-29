@@ -1,0 +1,126 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    /* background-color: red; */
+}
+/*Base.html.twig*/
+
+/*navbar*/
+
+.cart-mobile{
+    padding-left: 0%; 
+    margin-top: 14px; 
+    margin-bottom: 5px; 
+}
+
+
+
+/*Home.index.html.twig*/
+
+/*text main*/
+.mobile-position{
+    margin-left: 5%;
+}
+
+.text-body{
+    line-height:43px;
+}
+
+.baklavas{
+    margin-bottom:105%;
+}
+
+.baklava{
+    width: 230;
+    height: 161;
+    top: 20px;
+    left:10px;
+    position: absolute;
+    z-index:3;
+}
+
+ .baklava2{
+    width: 292;
+    height: 223;
+    position: absolute;
+    top: 260px;
+    left:0px;
+    z-index:1;
+}
+
+.baklava3{
+    width: 230;
+    height: 161;
+    position: absolute;
+    left:100px;
+    top:150px;
+    z-index:2;
+}  
+/*acount/index.html.twig*/
+
+.account-box{
+    margin-top: 18px;
+}
+
+/*cart/index.html.twig*/
+
+
+.cart-th{
+    display:none; 
+}
+
+.cart-tr{
+    display : block; 
+    padding-left: 150px;
+} 
+
+
+.cart-product-name{
+    display: block;
+    margin-left: -60px;
+}
+
+.cart-product-name::before{  
+    display: block;
+    position: relative; 
+    margin-left: -150px; 
+    width: 160px;
+    margin-bottom: -25px; 
+    font-weight: bold;
+
+} 
+
+.cart-td{
+    display: block;
+}
+
+.cart-td::before{
+    content: attr(data-label);
+    position: relative;
+    top: 0;
+    margin-left: -160px; 
+    width: 160px;
+    bottom: 0;
+    font-weight: bold;
+    
+}
+
+td:nth-child(4){
+    display: flex;
+}
+td:nth-child(5){ 
+    display: flex;
+}
+
+.cart-img{
+    margin-left: -90px;
+}
+
+/*product/show.html.twig*/
+.product-show{
+    display: none;
+}
+
+
+
+

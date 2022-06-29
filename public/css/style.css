@@ -1,0 +1,190 @@
+/*base.html.twig*/
+
+ body {
+    position: relative;
+}
+
+.navbar-item-custom, 
+.navbar-item-custom a {
+    color: #fff;
+}
+
+.cart-icon{
+    height: 20px;
+    padding-left: 20px;
+} 
+
+/*base.html.twig Carrousel*/
+.lefont{
+    background-color: antiquewhite;
+}
+ .img-position{
+    margin-left: 50%;
+    border-radius: 150px 75px 75px 150px;
+    /* background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+.text-carousel{
+    margin-left : -90%;
+    margin-right: 90%;
+    padding-top: -40%;
+    background-color: rgb(0, 0, 0,0.05);
+}
+
+/*base.html.twig Footer*/
+.footer-custom {   
+    margin-top: 10em;
+}
+
+
+
+
+/* product/show.html.twig */
+
+ .product-page-price {
+    font-weight: bold;
+    font-size: 19px;
+} 
+
+/* security/login.html.css */
+.register-block {
+    padding: 10px;
+    background-color: #fafafa;
+}
+
+
+.block-small {
+    max-width: 600px;
+    margin: 0  auto ;
+}
+
+/* Order/add.html.twig*/
+.form-chek{
+    background-color: #f4f8ff;
+    padding: 20px 65px;
+    margin-top:7px
+}
+
+.col-form-label{
+    font-weight: bold;
+}
+/* Order/index.html.twig*/
+
+.order-summary{
+    background-color: #f4f8ff;
+    padding: 20px;
+    margin-top: 22px;
+}
+
+/* acount/index.html.twig*/
+
+.account-item{
+    background-color: #f1f2f6;
+    padding: 70px;
+}
+.accont-item a {
+    text-transform: uppercase;
+    font-size:13px;
+    color: #4b6584;
+    font-weight: bold;
+}
+
+.accont-item a:hover{
+    color:#778ca3;
+    text-decoration: none;
+}
+
+
+
+/*Single_product.html.twig*/
+/*Pour les produits*/
+
+.allProduct{
+    width: 280;
+    height: 380;
+    padding: 13px 14px;
+    margin: 25px 0px ;
+    transition: all 500ms ease-in-out;
+}
+
+.allProduct img{
+    transition: all 500ms ease-in-out;
+}
+
+.allProduct:hover img{
+    transform: scale(1.2);
+}
+
+.allProduct .product-img{
+    overflow: hidden;
+}
+
+.hr{
+    margin: 10px 0px;
+}
+
+.text-div{
+    background-color:antiquewhite;
+    padding:5px;
+}
+
+#product-name{
+    background-color:antiquewhite;
+}
+
+#product-name{
+    margin-top: 10px;
+}
+
+.texte-fa-truck{
+    padding: 0px 7px;
+}
+
+.add-card{
+    margin-left: 27px;
+}
+
+
+/*Home/index.html.twig*/
+
+.baklava{
+    width: 292;
+    height: 223;
+    top: 20px;
+    left:40px;
+    position: absolute;
+    z-index:1;
+}
+
+ .baklava2{
+    width: 292;
+    height: 223;
+    position: absolute;
+    top: 220px;
+    left:0px;
+    z-index:2;
+    
+}
+
+.baklava3{
+    width: 292;
+    height: 223;
+    position: absolute;
+    left:280px;
+    top:105px;
+    z-index:3;
+} 
+
+/* /Commande Recaputulatif de la commande  */
+/* commande/recapitulatif Mon récaputulatif */
+.text-recap{
+    padding-left: 5rem;
+}
+
+
+
+
+
+
+

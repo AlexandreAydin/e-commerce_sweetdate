@@ -1,0 +1,30 @@
+ <div class="allProduct">
+    <div class="product-img">
+        <a href="{{ path ('app_product', {'slug': product.slug} )}}">
+            <img  width="252" height="183" src="/uploads/{{product.illustration}}" alt="{{product.name}}" class="product-img">
+        </a>    
+    </div>
+    <div class="text-div">
+
+
+        <div>
+            <h5 id="product-name">{{product.name}}<h5>
+            <hr class="hr">
+            <div class="d-flex">
+                    <i class="fa-solid fa-truck-fast "></i>            
+                <h5 class="texte-fa-truck product-text"> Envoi rapide </h5>
+            </div>
+            <hr class="hr">
+            <span>0,50 KG</span></br>
+            <hr class="hr">
+            <div id="price-card">
+                <span class="product-price" id="price">{{(product.price /100)|number_format(2,',','.') }}€</span>
+                <a href="{{ path ('app_add_to_cart', { id: product.id }) }}" class="btn btn-primary add-card"> Ajouter au panier </a>
+            </div>
+        </div>
+    </div>    
+</div>  
+
+
+
+

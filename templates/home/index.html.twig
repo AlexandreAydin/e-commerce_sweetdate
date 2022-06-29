@@ -1,0 +1,107 @@
+{% extends 'base.html.twig' %}
+ 
+{% block carousel %}{% endblock %}
+
+{% block content %}
+
+
+
+<div class="section small_pt pb_70">
+	<div class="container">
+        <div class="row">
+        	<div class="col-12">
+            	<div class="tab-style1">
+                    <ul class="nav nav-tabs justify-content-center" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="baklawa-tab" data-toggle="tab" href="#baklawa" role="tab" aria-controls="#" aria-selected="#">Baklawa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="FruitSec-tab" data-toggle="tab" href="#fruitSec" role="tab" aria-controls="fruitSec" aria-selected="false"> Fruit Sec </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="nosSpecilites-tab" data-toggle="tab" href="#nosSpecilites" role="tab" aria-controls="nosSpecilites" aria-selected="false"> Specialité Sweetdate </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="autre-tab" data-toggle="tab" href="#autre" role="tab" aria-controls="autre" aria-selected="false"> Autres </a>
+                        </li>
+                           <li class="nav-item">
+                            <a class="nav-link" id="sellers-tab" data-toggle="tab" href="#sellers" role="tab" aria-controls="sellers" aria-selected="true"> Meilleur Vente </a>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="tab-content">
+                    <div class="tab-pane fade" id="sellers" role="tabpanel" aria-labelledby="sellers-tab">
+                        <div class="row shop_container">
+                            {% for product in productMeilleur %}
+                                <div class="col-md-3 col-md-6 col-xl-3 mobile-position">
+                                {{ include ('product/single_product.html.twig',{'product' : product})}}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                	<div class="tab-pane fade show active" id="baklawa" role="tabpanel" aria-labelledby="baklawa-tab">
+                        <div class="row shop_container">
+                            {% for product in productBaklava %}
+                                <div class="col-md-3 col-md-6 col-xl-3 mobile-position">
+                                {{ include ('product/single_product.html.twig',{'product' : product})}}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="nosSpecilites" role="tabpanel" aria-labelledby="nosSpecilites-tab">
+                        <div class="row shop_container">
+                            {% for product in productNosSpecialites %}
+                                <div class="col-md-3 col-md-6 col-xl-3 mobile-position">
+                                 {{ include ('product/single_product.html.twig',{'product' : product})}}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="fruitSec" role="tabpanel" aria-labelledby="fruitSec-tab">
+                        <div class="row shop_container">
+                            {% for product in productFruitSec %}
+                                 <div class="col-md-3 col-md-6 col-xl-3 mobile-position">
+                                {{ include ('product/single_product.html.twig',{'product' : product})}}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                      <div class="tab-pane fade" id="autre" role="tabpanel" aria-labelledby="autre-tab">
+                        <div class="row shop_container">
+                            {% for product in productAutre %}
+                                 <div class="col-md-3 col-md-6 col-xl-3 mobile-position">
+                                {{ include ('product/single_product.html.twig',{'product' : product})}}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                     <div class="tab-pane fade" id="bientot" role="tabpanel" aria-labelledby="bientot-tab">
+                        <div class="row shop_container">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+        <h2 class="featurette-heading"> Une équipe de professionnel <span class="text-muted text-body">au grand savoir-faire </span></h1>
+            <p class="lead">  Depuis 1991 sweetdate partage avec ses clients fidéles son savoir-faire. Les gâteaux sweetdate sont fait des meilleurs qualité. C'est pour cette raison que nos clients nous font confiance. Avec plus de 30 ans d'éxperience notre marque vous permez de déguster les meilleurs gateaux spécialité Turc.  </p>
+        </div>
+        <div class="col-md-5 baklavas">
+            <img src="{{ asset('img/baklava.jpg') }}" class="baklava" width="252" height="183" alt="Baklva">
+            <img src="{{ asset('img/baklava3.jpg') }}" class="baklava2" width="252" height="183" alt="Baklava">
+            <img src="{{ asset('img/baklava4.jpg') }}" class="baklava3" width="252" height="183" alt="Baklava">
+        </div>
+    </div><br/><br/>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+{% endblock %}

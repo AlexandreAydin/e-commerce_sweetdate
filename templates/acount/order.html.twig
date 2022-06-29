@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block title %} Mes commandes - sweetdate {% endblock %}
+
+
+{% block content %}
+    
+<style>
+@media only screen and (max-width:500px){
+    .cart-mobile{
+        padding-left: 0%; 
+        margin-top: 14px; 
+        margin-bottom: 5px; 
+    }
+    .order-th{
+        display:none; 
+    }
+    .order-tr{
+        display : block; 
+        padding-left: 150px;
+    }
+    .cart-td{
+        display: block;
+    }
+    .order-td::before{
+        content: attr(data-label);
+        position: block;
+        top: 0;
+        margin-left: -160px; 
+        width: 160px;
+        bottom: 0;
+        font-weight: bold;    
+    }
+    td{
+        display:flex
+    }
+}
+</style>
+
+    <h1> Mes commandes </h1>
+     C'est dans cet espace que vous allez pouvoir gérer toutes vos commandes. <br/>
+    <a href="{{ path('app_acount') }}" class="yok"> Retour </a>
+    {% if orders|length == 0 %}
+        <hr>
+        <p class="text-center">
+             Vous n'avez pas encore passé de commande sur sweetdate. 
+        </p>
+    {% else %}
+        <table class="table mt-4">
+            <thead>
+            <tr>
+                <th scope="col" class="order-th"> Référence </th>
+                <th scope="col" class="order-th"> Statut </th>
+                <th scope="col" class="order-th"> Passée le</th>
+                <th scope="col" class="order-th"> Produit(s) </th>
+                <th scope="col" class="order-th"> Total </th>
+                <th scope="col" class="order-th"></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for order in orders %}
+                <tr class="order-tr">
+                    <td class="order-td" data-label="Référence"><span class="badge badge-secondary">{{ order.reference }}</span></td>
+                    <td class="order-td" data-label="Statut">
+                         {% if order.state == 1 %}
+                             Paiement accepté 
+                        {% elseif order.state == 2 %}
+                            Préparation en cours 
+                        {% elseif order.state == 3 %}
+                             Livraison en cours 
+                        {% elseif order.state == 4 %}
+                            Livré 
+                        {% endif %} 
+                    </td>
+                    <td class="order-td" data-label="Passée le">{{ order.createdAt|date('d/m/Y') }}</td>
+                    <td class="order-td" data-label="Produit(s)">{{ order.orderDetails|length }}</td>
+                    <td class="order-td" data-label="Total"> {{ ((order.carrierPrice + order.getTotal) / 100)|number_format(2, ',', '.') }} €</td>
+                    <td class="text-right order-td"><a href="{{ path('app-account_order_show', { 'reference' : order.reference }) }}"> Voir ma commande </a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+
+    {% endif %}
+{% endblock %}
